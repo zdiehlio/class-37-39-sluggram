@@ -1,4 +1,4 @@
-401 JS --  Lab 36 Full Stack Crud
+401 JS --  Lab 37 auth
 ===
 
 ## Submission Instructions
@@ -9,11 +9,13 @@
   * Submit a link to your pull request on canvas
   * Submit a question, observation, and how long you spent on canvas  
 
-## Requirements  
-#### Configuration  
 
-##### backend/
-* copy your lab-14 or comprable api into into a backend directory
+## Requirements  
+#### backend setup
+* clone down [sluggram](http://slugbyte.com/slugbyte/sluggram) on you your computer
+* or use your week 5 project 
+
+#### Configuration  
 ##### frontend/
 * **README.md** -- with a documention about your lab
 * **.babelrc** -- with all dependencies and dev-dependencies 
@@ -33,14 +35,10 @@
 * **src/style/_layout.scss** -- layout styles 
  
 #### Feature Tasks 
-* Create a frontend for your lab-14-two-resource-api.
- * You can also choose to to instead use a comprable REST api that does not have auth (must permit full CRUD)
-* You are only required to create CRUD opperations for a single resource of your bakend
-* Use react/redux best practices
-* Add validation in your redux routers
-* Add reporter and thunk middleware to your redux store
-* make async action creators for making ajax request to your backend
-* make sync action creators from updating your app store
+* Create a frontend that follows react redux best pratices
+* Create a landing page that enables a user to singup or login 
+* Redirect the user to the dashboard page on signup or login 
+* Store the users token in a cookie or localstorage on sign in 
 
 #### Test
 * Test your redux reducers 
