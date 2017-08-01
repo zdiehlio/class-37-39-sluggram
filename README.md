@@ -12,7 +12,7 @@
 
 ## Requirements  
 #### backend setup
-* clone down [sluggram](http://slugbyte.com/slugbyte/sluggram) on you your computer
+* clone down [sluggram](http://github.com/slugbyte/sluggram) on you your computer
 * or use your week 5 project 
 
 #### Configuration  
