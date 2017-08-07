@@ -5,12 +5,13 @@ class ProfileForm extends React.Component {
   constructor(props){
     super(props)
 
-    this.state = props.profile
-      ? {...props.profile, preview: ''}
-      : { bio: '', avatar: null, preview: '' }
+    console.log('props', props)
+    this.state = props.profile                  // passed in only if updateing 
+      ? {...props.profile, preview: ''}         // inital state on update
+      : { bio: '', avatar: null, preview: '' }  // inital state for createing a profile
 
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this) 
   }
 
   componentWillReceiveProps(props){
@@ -30,38 +31,38 @@ class ProfileForm extends React.Component {
       let avatar = files[0]
       this.setState({avatar})
       util.photoToDataURL(avatar)
-        .then(preview => this.setState({preview}))
-        .catch(console.error)
+      .then(preview => this.setState({preview}))
+      .catch(console.error)
     }
   }
 
   handleSubmit(e){
     e.preventDefault()
-    console.log('hooooo')
-    this.props.onComplete(this.state)
+    return this.props.onComplete(this.state)
+
   }
 
   render(){
     return (
-      <form
+      <form 
         className='profile-form'
         onSubmit={this.handleSubmit} >
+        
+        <img src={this.state.preview || this.state.avatar } />
 
-        <img src={this.state.preview} />
-
-        <input
+        <input 
           type='file'
           name='avatar'
           onChange={this.handleChange}
-        />
+          />
 
-        <textarea
+        <textarea 
           type='text'
-          name='bio'
-          value={this.state.bio}
+          name='bio' 
+          value={this.state.bio} 
           onChange={this.handleChange}>
         </textarea>
-
+          
         <button type='submit'> {this.props.buttonText} </button>
       </form>
     )

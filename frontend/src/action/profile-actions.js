@@ -1,6 +1,5 @@
 import superagent from 'superagent'
 
-// sync action creators
 export const profileCreate = (profile) => ({
   type: 'PROFILE_CREATE',
   payload: profile,
@@ -11,7 +10,6 @@ export const profileUpdate = (profile) => ({
   payload: profile,
 })
 
-// async action creators
 export const profileCreateRequest = (profile) => (dispatch, getState) => {
   let {auth} = getState()
   return superagent.post(`${__API_URL__}/profiles`)
